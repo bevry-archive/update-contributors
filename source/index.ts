@@ -23,7 +23,7 @@ export default async function updateContributors(path: string) {
 	try {
 		pkg = await readJSONFile<Package>(path)
 	} catch (err) {
-		console.error(path)
+		console.error(err)
 		throw new Error(`FAILED to read: ${path}`)
 	}
 
@@ -57,7 +57,7 @@ export default async function updateContributors(path: string) {
 			const added = await getContributorsFromRepo(githubRepoSlug)
 			remoteCount = added.size
 		} catch (err) {
-			console.error(err)
+			console.warn(err)
 			console.log(
 				`FAILED to fetch the remote contributors for the repository: ${githubRepoSlug}`
 			)

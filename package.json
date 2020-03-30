@@ -1,6 +1,6 @@
 {
   "name": "@bevry/update-contributors",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Update the package.json author, contributors, and maintainers fields with the latest remote data",
   "homepage": "https://github.com/bevry/update-contributors",
   "license": "MIT",
