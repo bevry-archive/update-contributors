@@ -4,7 +4,7 @@ import {
 	SluggablePackage,
 	readJSONFile,
 	writeJSONFile,
-} from './util'
+} from './util.js'
 
 interface Package extends SluggablePackage {
 	name?: string
@@ -35,12 +35,7 @@ export default async function updateContributors(path: string) {
 	}
 
 	// Add local people to the singleton with their appropriate permissions
-	Fellow.add(pkg.author).forEach((person) => {
-		// package author string
-		person.authoredRepositories.add(slug)
-	})
-	Fellow.add(pkg.authors).forEach((person) => {
-		// bower authors array
+	Fellow.add(pkg.author, pkg.authors).forEach((person) => {
 		person.authoredRepositories.add(slug)
 	})
 	Fellow.add(pkg.contributors).forEach((person) => {
@@ -72,10 +67,12 @@ export default async function updateContributors(path: string) {
 		)
 		.join(', ')
 	pkg.contributors = Fellow.contributesRepository(slug)
-		.map((fellow) => fellow.toString({ displayEmail: true }))
+		.map((fellow) =>
+			fellow.toString({ displayEmail: true, urlFields: ['githubUrl', 'url'] })
+		)
 		.filter((entry) => entry.includes('[bot]') === false)
 	pkg.maintainers = Fellow.maintainsRepository(slug).map((fellow) =>
-		fellow.toString({ displayEmail: true })
+		fellow.toString({ displayEmail: true, urlFields: ['githubUrl', 'url'] })
 	)
 
 	// clean up in case empty
