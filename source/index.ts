@@ -1,4 +1,4 @@
-import { getContributorsFromRepo, Fellow } from 'getcontributors'
+import { getContributorsFromCommits, Fellow } from 'getcontributors'
 import {
 	getGitHubRepoSlug,
 	SluggablePackage,
@@ -49,7 +49,7 @@ export default async function updateContributors(path: string) {
 	// Enhance authors, contributors and maintainers with latest remote data
 	if (githubRepoSlug) {
 		try {
-			const added = await getContributorsFromRepo(githubRepoSlug)
+			const added = await getContributorsFromCommits(githubRepoSlug)
 			remoteCount = added.size
 		} catch (err) {
 			console.warn(err)

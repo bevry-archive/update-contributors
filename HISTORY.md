@@ -1,5 +1,10 @@
 # History
 
+## v1.3.0 2020 May 11
+
+-   Don't fetch from remote package file, only from local package file and remote commits
+    -   This is because if you are tidying up and removing duplicates locally by editing the local package, then your changes would be discarded if fetching from the remote package, as such, it only makes sense to merge remote commits with the local package, and to disregard the remote package
+
 ## v1.2.0 2020 May 11
 
 -   Updated dependencies, [base files](https://github.com/bevry/base), and [editions](https://editions.bevry.me) using [boundation](https://github.com/bevry/boundation)
