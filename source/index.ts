@@ -71,9 +71,12 @@ export default async function updateContributors(path: string) {
 			fellow.toString({ displayEmail: true, urlFields: ['githubUrl', 'url'] })
 		)
 		.filter((entry) => entry.includes('[bot]') === false)
-	pkg.maintainers = Fellow.maintainsRepository(slug).map((fellow) =>
-		fellow.toString({ displayEmail: true, urlFields: ['githubUrl', 'url'] })
-	)
+		.sort()
+	pkg.maintainers = Fellow.maintainsRepository(slug)
+		.map((fellow) =>
+			fellow.toString({ displayEmail: true, urlFields: ['githubUrl', 'url'] })
+		)
+		.sort()
 
 	// clean up in case empty
 	if (!pkg.author) delete pkg.author

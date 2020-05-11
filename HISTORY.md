@@ -1,5 +1,9 @@
 # History
 
+## v1.4.0 2020 May 11
+
+-   Sort the maintainers and contributors in alphabetical order
+
 ## v1.3.0 2020 May 11
 
 -   Don't fetch from remote package file, only from local package file and remote commits
