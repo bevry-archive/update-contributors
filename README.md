@@ -92,7 +92,7 @@ Update the package.json author, contributors, and maintainers fields with the la
 
 These amazing people are maintaining this project:
 
-<ul><li><a href="http://balupton.com">Benjamin Lupton</a> — <a href="https://github.com/bevry/update-contributors/commits?author=balupton" title="View the GitHub contributions of Benjamin Lupton on repository bevry/update-contributors">view contributions</a></li></ul>
+<ul><li><a href="https://balupton.com">Benjamin Lupton</a> — <a href="https://github.com/bevry/update-contributors/commits?author=balupton" title="View the GitHub contributions of Benjamin Lupton on repository bevry/update-contributors">view contributions</a></li></ul>
 
 <h3>Sponsors</h3>
 
@@ -112,7 +112,7 @@ No sponsors yet! Will you be the first?
 
 These amazing people have contributed code to this project:
 
-<ul><li><a href="http://balupton.com">Benjamin Lupton</a> — <a href="https://github.com/bevry/update-contributors/commits?author=balupton" title="View the GitHub contributions of Benjamin Lupton on repository bevry/update-contributors">view contributions</a></li></ul>
+<ul><li><a href="https://balupton.com">Benjamin Lupton</a> — <a href="https://github.com/bevry/update-contributors/commits?author=balupton" title="View the GitHub contributions of Benjamin Lupton on repository bevry/update-contributors">view contributions</a></li></ul>
 
 <a href="https://github.com/bevry/update-contributors/blob/master/CONTRIBUTING.md#files">Discover how you can contribute by heading on over to the <code>CONTRIBUTING.md</code> file.</a>
 
@@ -125,7 +125,7 @@ These amazing people have contributed code to this project:
 
 Unless stated otherwise all works are:
 
-<ul><li>Copyright &copy; 2020+ <a href="http://balupton.com">Benjamin Lupton</a></li></ul>
+<ul><li>Copyright &copy; 2020+ <a href="https://balupton.com">Benjamin Lupton</a></li></ul>
 
 and licensed under:
 
