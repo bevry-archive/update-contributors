@@ -122,7 +122,7 @@
     "surge": "^0.21.3",
     "typedoc": "^0.17.7",
     "typescript": "^3.9.5",
-    "valid-directory": "2.2.0"
+    "valid-directory": "2.5.0"
   },
   "scripts": {
     "our:clean": "rm -Rf ./docs ./edition* ./es2015 ./es5 ./out ./.next",
