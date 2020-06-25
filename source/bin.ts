@@ -1,4 +1,5 @@
 import { resolve } from 'path'
 import updateContributors from './index.js'
+import { cwd } from 'process'
 
-updateContributors(resolve(process.cwd(), 'package.json'))
+updateContributors(resolve(cwd(), 'package.json'))
