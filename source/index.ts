@@ -1,10 +1,9 @@
-import { getContributorsFromCommits, Fellow } from 'getcontributors'
 import {
-	getGitHubRepoSlug,
-	SluggablePackage,
-	readJSONFile,
-	writeJSONFile,
-} from './util.js'
+	getContributorsFromRepoContributorData,
+	Fellow,
+} from '@bevry/github-contributors'
+import { readJSON, writeJSON } from '@bevry/json'
+import { getGitHubRepoSlug, SluggablePackage } from './util.js'
 
 interface Package extends SluggablePackage {
 	name?: string
@@ -15,22 +14,17 @@ interface Package extends SluggablePackage {
 }
 
 export default async function updateContributors(path: string) {
-	let pkg: Package,
-		localCount = 0,
+	let localCount = 0,
 		remoteCount = 0
 
 	// read
-	try {
-		pkg = await readJSONFile<Package>(path)
-	} catch (err) {
-		console.error(err)
-		throw new Error(`FAILED to read: ${path}`)
-	}
+	const pkg: Package = await readJSON<Package>(path)
 
 	// slug
 	const githubRepoSlug = getGitHubRepoSlug(pkg)
 	const slug = githubRepoSlug || pkg.name
 	if (!slug) {
+		console.error(path, pkg)
 		throw new Error('package needs at least a name to identify it uniquely')
 	}
 
@@ -49,17 +43,17 @@ export default async function updateContributors(path: string) {
 	// Enhance authors, contributors and maintainers with latest remote data
 	if (githubRepoSlug) {
 		try {
-			const added = await getContributorsFromCommits(githubRepoSlug)
+			const added = await getContributorsFromRepoContributorData(githubRepoSlug)
 			remoteCount = added.size
 		} catch (err) {
 			console.warn(err)
-			console.log(
+			console.warn(
 				`FAILED to fetch the remote contributors for the repository: ${githubRepoSlug}`
 			)
 		}
 	}
 
-	// update the data with the coverged data
+	// update the data with the converged data
 	delete pkg.authors
 	pkg.author = Fellow.authorsRepository(slug)
 		.map((fellow) =>
@@ -84,12 +78,7 @@ export default async function updateContributors(path: string) {
 	if (pkg.maintainers.length === 0) delete pkg.maintainers
 
 	// write it
-	try {
-		await writeJSONFile(path, pkg)
-	} catch (err) {
-		console.error(err)
-		throw new Error(`FAILED to write: ${path}`)
-	}
+	await writeJSON(path, pkg)
 
 	// done
 	console.log(

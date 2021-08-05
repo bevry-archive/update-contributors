@@ -1,6 +1,6 @@
 <!-- TITLE/ -->
 
-<h1>@bevry/update-contributors</h1>
+<h1>Update Contributors</h1>
 
 <!-- /TITLE -->
 

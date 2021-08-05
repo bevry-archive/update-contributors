@@ -1,6 +1,7 @@
 {
+  "title": "Update Contributors",
   "name": "@bevry/update-contributors",
-  "version": "1.20.0",
+  "version": "1.21.0",
   "description": "Update the package.json author, contributors, and maintainers fields with the latest remote data",
   "homepage": "https://github.com/bevry/update-contributors",
   "license": "MIT",
@@ -130,24 +131,26 @@
     }
   },
   "dependencies": {
-    "getcontributors": "^2.23.0"
+    "@bevry/github-contributors": "^3.0.0-next.1628141596.4dc998cdee7ce8c7a42543a2fef6880e86f2bc65",
+    "@bevry/json": "^1.4.0"
   },
   "devDependencies": {
-    "@typescript-eslint/eslint-plugin": "^4.28.5",
-    "@typescript-eslint/parser": "^4.28.5",
+    "@typescript-eslint/eslint-plugin": "^4.29.0",
+    "@typescript-eslint/parser": "^4.29.0",
     "assert-helpers": "^8.4.0",
-    "eslint": "^7.31.0",
+    "eslint": "^7.32.0",
     "eslint-config-bevry": "^3.27.0",
     "eslint-config-prettier": "^8.3.0",
     "eslint-plugin-prettier": "^3.4.0",
+    "filedirname": "^2.7.0",
     "kava": "^5.15.0",
     "make-deno-edition": "^1.3.0",
     "prettier": "^2.3.2",
     "projectz": "^2.22.0",
     "surge": "^0.23.0",
-    "typedoc": "^0.21.4",
+    "typedoc": "^0.21.5",
     "typescript": "4.3.5",
-    "valid-directory": "^3.7.0"
+    "valid-directory": "^3.9.0"
   },
   "scripts": {
     "our:bin": "node ./bin.cjs",
@@ -186,5 +189,10 @@
   "prettier": {
     "semi": false,
     "singleQuote": true
+  },
+  "boundation": {
+    "githubActionTestEnv": {
+      "GITHUB_TOKEN": "${{ secrets.GITHUB_TOKEN }}"
+    }
   }
 }

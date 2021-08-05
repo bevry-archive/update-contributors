@@ -1,5 +1,10 @@
 # History
 
+## v1.21.0 2021 August 5
+
+-   Updated for latest dependency rewrites, which now supports paging (so repos with over 100 contributors now fetch the rest)
+-   Updated dependencies, [base files](https://github.com/bevry/base), and [editions](https://editions.bevry.me) using [boundation](https://github.com/bevry/boundation)
+
 ## v1.20.0 2021 July 31
 
 -   Updated dependencies, [base files](https://github.com/bevry/base), and [editions](https://editions.bevry.me) using [boundation](https://github.com/bevry/boundation)
