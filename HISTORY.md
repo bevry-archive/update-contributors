@@ -1,5 +1,10 @@
 # History
 
+## v1.22.0 2023 March 24
+
+-   Updated dependencies, [base files](https://github.com/bevry/base), and [editions](https://editions.bevry.me) using [boundation](https://github.com/bevry/boundation)
+-   Updated license from [`MIT`](http://spdx.org/licenses/MIT.html) to [`Artistic-2.0`](http://spdx.org/licenses/Artistic-2.0.html)
+
 ## v1.21.0 2021 August 5
 
 -   Updated for latest dependency rewrites, which now supports paging (so repos with over 100 contributors now fetch the rest)
