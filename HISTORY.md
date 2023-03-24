@@ -1,5 +1,10 @@
 # History
 
+## v2.0.0 2023 March 24
+
+-   Updated dependencies, [base files](https://github.com/bevry/base), and [editions](https://editions.bevry.me) using [boundation](https://github.com/bevry/boundation)
+-   Updated license from [`node: >=10`](http://spdx.org/licenses/node: >=10.html) to [`node: >=10`](http://spdx.org/licenses/node: >=10.html)
+
 ## v1.21.0 2021 August 5
 
 -   Updated for latest dependency rewrites, which now supports paging (so repos with over 100 contributors now fetch the rest)
