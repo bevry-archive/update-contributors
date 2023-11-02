@@ -48,7 +48,7 @@ export default async function updateContributors(path: string) {
 		} catch (err) {
 			console.warn(err)
 			console.warn(
-				`FAILED to fetch the remote contributors for the repository: ${githubRepoSlug}`
+				`FAILED to fetch the remote contributors for the repository: ${githubRepoSlug}`,
 			)
 		}
 	}
@@ -57,18 +57,18 @@ export default async function updateContributors(path: string) {
 	delete pkg.authors
 	pkg.author = Fellow.authorsRepository(slug)
 		.map((fellow) =>
-			fellow.toString({ displayYears: true, displayEmail: true })
+			fellow.toString({ displayYears: true, displayEmail: true }),
 		)
 		.join(', ')
 	pkg.contributors = Fellow.contributesRepository(slug)
 		.map((fellow) =>
-			fellow.toString({ displayEmail: true, urlFields: ['githubUrl', 'url'] })
+			fellow.toString({ displayEmail: true, urlFields: ['githubUrl', 'url'] }),
 		)
 		.filter((entry) => entry.includes('[bot]') === false)
 		.sort()
 	pkg.maintainers = Fellow.maintainsRepository(slug)
 		.map((fellow) =>
-			fellow.toString({ displayEmail: true, urlFields: ['githubUrl', 'url'] })
+			fellow.toString({ displayEmail: true, urlFields: ['githubUrl', 'url'] }),
 		)
 		.sort()
 
@@ -82,6 +82,6 @@ export default async function updateContributors(path: string) {
 
 	// done
 	console.log(
-		`Updated contributors (${localCount} local, ${remoteCount} remote) on [${path}]`
+		`Updated contributors (${localCount} local, ${remoteCount} remote) on [${path}]`,
 	)
 }
