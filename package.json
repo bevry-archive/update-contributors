@@ -132,7 +132,7 @@
   },
   "dependencies": {
     "@bevry/github-contributors": "^4.1.0",
-    "@bevry/json": "^1.5.0"
+    "@bevry/json": "^2.4.0"
   },
   "devDependencies": {
     "@types/node": "^20.8.10",
